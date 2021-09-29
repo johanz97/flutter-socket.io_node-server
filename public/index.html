@@ -22,11 +22,20 @@
         });
 
         //Emitir evento
-        socket.emit('mensaje', { nombre: 'Johan' });
+        //socket.emit('mensaje', { nombre: 'Johan' });
 
         //Escuchar respuesta
         socket.on('mensaje', function (payload) {
             console.log(payload);
+        });
+
+        socket.on('nuevo-mensaje', function (payload) {
+            console.log(payload);
+        });
+
+        socket.on('active-bands', function (bands) {
+            console.clear();
+            console.table(bands);
         });
     </script>
 </body>
